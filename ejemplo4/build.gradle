@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:1.2.5.RELEASE')
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+jar {
+    baseName = 'ejemplo4'
+    version =  '0.0.1'
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    compile('org.springframework.boot:spring-boot-starter-web:1.2.5.RELEASE')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+
+    /*
+    compile('com.orientechnologies:orientdb-graphdb:2.1.2')
+    compile('com.orientechnologies:orientdb-core:2.1.2')
+    compile('com.orientechnologies:orientdb-client:2.1.2')
+    compile('com.orientechnologies:orientdb-enterprise:2.1.2')
+    compile('com.tinkerpop.blueprints:blueprints-core:2.6.0')
+    */
+
+    compile('com.github.eugene-kamenev:orientdb-groovy:0.1.1')
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
